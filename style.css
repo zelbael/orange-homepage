@@ -1,0 +1,34 @@
+#main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "nav nav"
+        "description description"
+        "fan-pages fan-pages"
+        "side-projects side-projects"
+        "login-tech login-tech";
+    row-gap: 20px;
+    column-gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#description {
+    grid-area: description;
+}
+
+#fan-pages {
+    grid-area: fan-pages;
+}
+
+#side-projects {
+    grid-area: side-projects;
+}
+
+#login-tech {
+    grid-area: login-tech;
+}
