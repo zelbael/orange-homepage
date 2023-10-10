@@ -5,8 +5,8 @@
         "nav nav"
         "description description"
         "fan-pages fan-pages"
-        "side-projects side-projects"
-        "login-tech login-tech";
+        "class-projects side-projects"
+        "tech-elevator tech-elevator";
     row-gap: 20px;
     column-gap: 50px;
     align-items: center;
@@ -25,10 +25,10 @@
     grid-area: fan-pages;
 }
 
-#side-projects {
+#class-projects {
     grid-area: side-projects;
 }
 
-#login-tech {
+#tech-elevator {
     grid-area: login-tech;
 }
