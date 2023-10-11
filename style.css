@@ -1,3 +1,13 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 100px;
+    font-weight: bold;
+    color: rgb(241, 157, 0);
+}
+
 #main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -7,6 +17,7 @@
         "fan-pages fan-pages"
         "class-projects side-projects"
         "tech-elevator tech-elevator";
+    grid-auto-rows: (100px, auto);
     row-gap: 20px;
     column-gap: 50px;
     align-items: center;
@@ -30,5 +41,5 @@
 }
 
 #tech-elevator {
-    grid-area: login-tech;
+    grid-area: tech-elevator;
 }

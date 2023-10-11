@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Orange Class Site</title>
     <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <!--Nav-->
 <main id="main-grid">
     <nav id="nav">
-        <div class="logo">Java Orange</div>
-        <img src="imgs/long_logo_dark.png" alt="dark logo image">
+        <h1 class="logo">Java Orange</h1>
+       <!-- <img src="imgs/long_logo_dark.png" alt="dark logo image">-->
         <div>
-            <ul class="nav-links">
-                <li>About</li>
-                <li>Fan Pages</li>
-                <li>Class Projects</li>
-                <li>Submit Fan Pages</li>
-                <li>Tech Elevator</li>
-                <li>Log In</li>
-            </ul>
+            <button class="tablink" onclick="open('About', this, 'red')" id="defaultOpen">About</button>
+            <button class="tablink" onclick="open('Fan Pages', this, 'green')">Fan Pages</button>
+            <button class="tablink" onclick="open('Class Projects', this, 'blue')">Class Projects</button>
+            <button class="tablink" onclick="open('Submit Fan Pages', this, 'orange')">Submit Fan Pages</button>
+            <button class="tablink" onclick="open('Tech Elevator', this, 'light blue')">Tech Elevator</button>
+            <button class="tablink" onclick="open('Log In', this, 'dark blue')">Log In</button>
         </div>
     </nav>
     
@@ -35,6 +36,7 @@
         <!--hover menu for fan pages/gallery of fan pages FULL -->
     </section>
 
+<!-- Section for class projects-->
     <section id="class-projects">
         <!--simple- whoever feels confident to share github FULL -->
     </section>
@@ -45,6 +47,7 @@
         <!--tech elevator blurb about our favorite bootcamp-->
     </section>
 </main>
+
     
 </body>
 </html>
