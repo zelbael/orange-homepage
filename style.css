@@ -8,6 +8,16 @@ h1 {
     color: rgb(241, 157, 0);
 }
 
+.logo {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5em;
+}
+
+/* GRID */
+
 #main-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -42,4 +52,33 @@ h1 {
 
 #tech-elevator {
     grid-area: tech-elevator;
+}
+
+/* NAV BUTTONS */
+
+.nav-container {
+    text-align: center;
+}
+
+.tablink {
+    display: inline-block;
+    background-color: palegoldenrod;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    border: rgb(241, 157, 0);
+    padding: 14px 16px;
+    font-size: 18px;
+    width: 16.3%;
+    margin: 0 auto; 
+}
+
+.tablink:hover {
+    background-color: lightskyblue;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
 }
