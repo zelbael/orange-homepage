@@ -1,84 +1,222 @@
 * {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-h1 {
+/* h1 {
     font-size: 100px;
     font-weight: bold;
     color: rgb(241, 157, 0);
-}
+} */
 
-.logo {
-    height: 5vh;
+/* .logo {
     display: flex;
+    height: 5vh;
     align-items: center;
     justify-content: center;
     letter-spacing: 0.5em;
+  } */
+
+.animate-character {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #e9dcb7 0%,
+    #ddb150 29%,
+    #ff9640 67%,
+    #eba000 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+  font-size: 150px;
+  margin-bottom: 0;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* sliding out from nav does not work with the transition here*/
+.nav-container.mobile-menu {
+  display: none;
+  border-bottom-right-radius: 30%;
+  transition: color 0.3s ease-in-out;
+}
+
+.tablink {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(97, 95, 71);
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  border: rgb(211, 137, 0);
+  padding: 4px 10px;
+  font-size: 16px;
+  width: 12%;
+  margin: 0 5px;
+}
+
+.tablink:hover {
+  background-color: lightskyblue;
+}
+
+.menu-btn {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+#aside {
+  color: whitesmoke;
+  background-color: rgb(182, 128, 11);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  margin: 5vh;
+  border-radius: 40px 20px 30px 10px;
+  border: 2px solid rgb(97, 95, 71);
+  width: 80%;
+  max-width: 400px;
+}
+
+#aside ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  margin: 0;
+}
+
+#aside ul > h1 {
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+#aside ul > h3 {
+  margin: 0;
+  margin-bottom: 2vh;
+  font-weight: 100;
 }
 
 /* GRID */
 
-#main-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "nav nav"
-        "description description"
-        "fan-pages fan-pages"
-        "class-projects side-projects"
-        "tech-elevator tech-elevator";
-    grid-auto-rows: (100px, auto);
-    row-gap: 20px;
-    column-gap: 50px;
-    align-items: center;
-    justify-content: center;
-}
-
-#nav {
-    grid-area: nav;
+#content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-areas:
+    "aside description description"
+    "aside tech-elevator tech-elevator"
+    "fan-pages fan-pages fan-pages";
+  row-gap: 20px;
+  column-gap: 20px;
+  align-items: start;
+  justify-content: center;
 }
 
 #description {
-    grid-area: description;
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+  margin-left: 2vh;
 }
 
-#fan-pages {
-    grid-area: fan-pages;
+#description > h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 200%;
 }
 
-#class-projects {
-    grid-area: side-projects;
+#description > h3 {
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  margin-top: 1vh;
+}
+
+#icons {
+  display: flex;
+  flex-direction: row;
+}
+
+#icons img {
+  display: flex;
+  flex-direction: row;
+  width: 125px;
+  height: 125px;
 }
 
 #tech-elevator {
-    grid-area: tech-elevator;
+  grid-area: tech-elevator;
 }
 
-/* NAV BUTTONS */
-
-.nav-container {
-    text-align: center;
+#fan-pages {
+  grid-area: fan-pages;
 }
 
-.tablink {
-    display: inline-block;
-    background-color: palegoldenrod;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    border: rgb(241, 157, 0);
-    padding: 14px 16px;
-    font-size: 18px;
-    width: 16.3%;
-    margin: 0 auto; 
+/* For tablets and smaller screens */
+@media screen and (max-width: 1024px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .logo {
+    height: auto;
+  }
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .tablink {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
 
-.tablink:hover {
-    background-color: lightskyblue;
-}
+/* For mobile devices */
+@media only screen and (max-width: 450px) {
+  .logo {
+    font-size: 24px;
+  }
 
-.tabcontent {
-    color: white;
-    display: none;
-    padding: 50px;
-    text-align: center;
+  .nav-container {
+  }
+
+  .tablink {
+  }
 }

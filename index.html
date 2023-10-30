@@ -1,67 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Java Orange Class Site</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-<!--Nav-->
-<main id="main-grid">
-    <nav id="nav">
-        <h1 class="logo">🍊 Java Orange</h1>
-       <!-- <img src="imgs/long_logo_dark.png" alt="dark logo image">-->
-        <div class ="nav-container">
-            <button class="tablink" onclick="open('About', this, 'red')" id="defaultOpen">About</button>
-            <button class="tablink" onclick="open('Fan Pages', this, 'green')">Fan Pages</button>
-            <button class="tablink" onclick="open('Class Projects', this, 'blue')">Class Projects</button>
-            <button class="tablink" onclick="open('Submit Fan Pages', this, 'orange')">Submit Fan Pages</button>
-            <button class="tablink" onclick="open('Tech Elevator', this, 'light blue')">Tech Elevator</button>
-            <button class="tablink" onclick="open('Log In', this, 'dark blue')">Log In</button>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <nav id="nav">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h3 class="animate-character">🍊 Java Orange</h3>
+            </div>
+          </div>
         </div>
-    </nav>
-    
-<!--Description and icons-->
-    <section id = "description">
-        <!--Our skills, what we have learned FULL-->
-        <dl>
-            <dt>Object-Oriented Programming: </dt>
-            <dd>✴ Java </dd>
-            <dt>Web Application Development: </dt>
-            <dd>✴ HTML, CSS, JavaScript, Spring Boot, Tomcat, Vue.js</dd>
-            <dt>Database Programming: </dt>
-            <dd>✴ JDBC, Table Design, SQL, PostreSQL, E/R diagrams</dd>
-            <dt>Development tools and techniques: </dt>
-            <dd>✴ Agile, Unit Testing (JUnit), Integration Testing, TDD, Unix Command Line navigation, Git, Eclipse</dd>
-        </dl>
-        
-    </section>
+        <!-- <h1 class="logo">🍊 Java Orange</h1> -->
+        <div class="nav-container">
+          <button
+            class="tablink"
+            onclick="open('About', this, 'red')"
+            id="defaultOpen"
+          >
+            About
+          </button>
+          <button class="tablink" onclick="open('Fan Pages', this, 'green')">
+            Fan Pages
+          </button>
+          <button
+            class="tablink"
+            onclick="open('Class Pages', this, 'light green')"
+          >
+            Class Pages
+          </button>
+          <button
+            class="tablink"
+            onclick="open('Tech Elevator', this, 'light blue')"
+          >
+            Tech Elevator
+          </button>
+        </div>
+        <img src="/imgs/menu-btn.png" alt="menu-btn" class="menu-btn" />
+      </nav>
 
+      <section id="content-grid">
+        <!--Description and icons-->
+        <aside id="aside">
+          <!--Our skills, what we have learned FULL-->
+          <ul>
+            <h1>EXPERTISE SHOWCASE</h1>
+            <h3>Object-Oriented Programming</h3>
+            <h3>Web Application Development</h3>
+            <h3>Database Programming</h3>
+            <h3>Development Tools and Techniques</h3>
+            <!-- <h4> Java </h4>
+            <h3> Web Applicatio
+              n Development: </h3>
+            <h4> HTML, CSS, JavaScript, Spring Boot, Tomcat, Vue.js </h4>
+            <h3> Database Programming: </h3>
+            <h4> JDBC, Table Design, SQL, PostgreSQL, E/R diagrams </h4>
+            <h3> Development tools and techniques: </h3>
+            <h4> Agile, Unit Testing (JUnit), Integration Testing, TDD, Unix Command Line
+                navigation, Git, Eclipse </h4> -->
+          </ul>
+        </aside>
 
-<!--Section for member side projects FULL -->
-    <section id= "fan-pages">
-        <!--hover menu for fan pages/gallery of fan pages FULL -->
-    </section>
+        <section id="description">
+          <h2>Tech Elevator's Aspiring Full-Stack Developers</h2>
+          <h3>
+            Enter the world of Tech Elevator's dedicated cohort, exploring
+            full-stack development with a tech passion. Discover their journey
+            mastering HTML, CSS, and crafting innovative fan pages, showcasing
+            top-notch design. Witness these future tech leaders merging skill
+            and determination to impact the dynamic tech landscape.
+          </h3>
+          <div id="icons">
+            <img src="/imgs/java icon.png" alt="java" class="java" />
+            <img src="/imgs/javascript icon.png" alt="js" class="js" />
+            <img src="/imgs/css icon.png" alt="css" class="css" />
+            <img src="/imgs/html icon.jpg" alt="html" class="html" />
+          </div>
+        </section>
 
-<!-- Section for class projects-->
-    <section id="class-projects">
-        <!--simple- whoever feels confident to share github FULL -->
-    </section>
+        <!--Section for member side projects FULL -->
+        <section id="fan-pages">
+          <ul id="list"></ul>
+          <!--hover menu for fan pages/gallery of fan pages FULL -->
+        </section>
 
+        <section id="tech-elevator"></section>
+      </section>
+    </main>
+    <script>
+      window.onload = function () {
+        const menuBtn = document.querySelector(".menu-btn");
+        const navLinks = document.querySelector(".nav-container");
 
-<!--Login/Tech Elevator Blurb-->
-    <section id="tech-elevator">
-        <!--tech elevator blurb about our favorite bootcamp-->
-        <iframe width="420" height="315"
-            src="https://www.youtube.com/watch?v=OttdQAb34ws">
-            </iframe>
-    </section>
-</main>
-
-    
-</body>
+        menuBtn.addEventListener("click", () => {
+          navLinks.classList.toggle("mobile-menu");
+        });
+      };
+    </script>
+  </body>
 </html>
