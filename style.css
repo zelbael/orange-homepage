@@ -93,7 +93,25 @@
   text-align: center;
 }
 
-#aside {
+/* GRID */
+
+#content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-areas:
+    "aside description description"
+    "aside skills skills"
+    "fan-pages fan-pages fan-pages"
+    "tech-elevator tech-elevator tech-elevator";
+    row-gap: 20px;
+    row-gap: 20px;
+  row-gap: 20px;
+  column-gap: 20px;
+  align-items: start;
+  justify-content: center;
+}
+
+#aside, #skills {
   color: whitesmoke;
   background-color: rgb(182, 128, 11);
   display: flex;
@@ -128,20 +146,6 @@
   font-weight: 100;
 }
 
-/* GRID */
-
-#content-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-template-areas:
-    "aside description description"
-    "aside tech-elevator tech-elevator"
-    "fan-pages fan-pages fan-pages";
-  row-gap: 20px;
-  column-gap: 20px;
-  align-items: start;
-  justify-content: center;
-}
 
 #description {
   grid-area: description;
@@ -168,27 +172,77 @@
   margin-top: 1vh;
 }
 
-#icons {
+#skills {
+  grid-area: skills;
   display: flex;
-  flex-direction: row;
+}
+
+/* #icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #icons img {
-  display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 125px;
   height: 125px;
+} */
+
+/* #bootcamp-imgs {
+  grid-area: bootcamp-imgs;
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.bc {
+  margin: 10px; 
+} */
+
+
+#fan-pages {
+  grid-area: fan-pages;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#fan-pages .page {
+  width: calc(20% - 10px); /* (each img takes up to 20% of container) (10px makes sure space between imgs*/
+  flex-grow: 0;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#fan-pages .page img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* makes sure the image covers the entire circular area */
+  border: 2px solid rgb(97, 95, 71);
+}
+
+#fan-pages .page .person {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#fan-pages .page .person.hover {
+  background-color: #7fb0fa;
 }
 
 #tech-elevator {
   grid-area: tech-elevator;
 }
 
-#fan-pages {
-  grid-area: fan-pages;
-}
-
-/* For tablets and smaller screens */
 @media screen and (max-width: 1024px) {
   .menu-btn {
     display: block;
@@ -208,7 +262,6 @@
   }
 }
 
-/* For mobile devices */
 @media only screen and (max-width: 450px) {
   .logo {
     font-size: 24px;
